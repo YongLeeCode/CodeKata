@@ -1,6 +1,4 @@
-import java.util.Arrays;
-
-public class Main {
+public class 바탕화면정리 {
     public static void solution() {
         String[] wallpaper = {".#...", "..#..", "...#."};
         int minX = 50;
