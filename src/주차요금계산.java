@@ -47,7 +47,7 @@ public class 주차요금계산 {
             if(minutes <= firstTime) {
                 totalFee.add(firstFee);
             } else  {
-                totalFee.add(firstFee + (int) (((Math.floor(minutes - firstTime) / extraTime)) * extraFee));
+                totalFee.add((int) (firstFee + Math.ceil ((double) (minutes - firstTime) / extraTime * extraFee)));
             }
         }
 
