@@ -41,9 +41,6 @@ public class 피보나치_수 {
         return fibonacci(num1, num2, index + 1, n);
     }
 
-
-
-
     public static void main(String[] args) {
         solution(5);
     }
