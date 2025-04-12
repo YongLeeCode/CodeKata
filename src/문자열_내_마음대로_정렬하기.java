@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
  * @packageName : PACKAGE_NAME
  * @fileName : 문자열_내_마음대로_정렬하기
  * @date : 4/3/25
- * @description :
+ * @description : https://school.programmers.co.kr/learn/courses/30/lessons/12915
  */
 public class 문자열_내_마음대로_정렬하기 {
     public static String[] solution(String[] strings, int n) {
