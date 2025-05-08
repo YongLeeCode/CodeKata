@@ -1,0 +1,28 @@
+public class 이상한문자만들기 {
+	public static String solution(String s) {
+		String answer = "";
+		int count = 0;
+		String sub;
+		for (int i=0; i<s.length(); i++){
+			sub = s.substring(i,i+1);
+			if (sub.equals(" ")){
+				answer += " ";
+				count = 0;
+			}else{
+				if (count % 2 == 0){
+					answer += sub.toUpperCase();
+					System.out.println(answer);
+					count++;
+				}else{
+					answer += sub.toLowerCase();
+					count++;
+				}
+			}
+		}
+		return answer;
+	}
+
+	public static void main(String[] args) {
+		System.out.println(solution("try hello world"));
+	}
+}

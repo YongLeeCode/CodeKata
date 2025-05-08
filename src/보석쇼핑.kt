@@ -23,7 +23,7 @@ class Solution() {
                 map[removed] = (map[removed] ?: 1) - 1
             }
         }
-        println()
+
         return intArrayOf(1)
     }
 
