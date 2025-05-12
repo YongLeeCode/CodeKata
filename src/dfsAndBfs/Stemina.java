@@ -1,4 +1,4 @@
-package dfs;
+package dfsAndBfs;
 
 public class Stemina {
     public static int a = 0;
