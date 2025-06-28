@@ -20,7 +20,7 @@ public class 같은_숫자는_싫어 {
 			}
 			prevNum = num;
 		}
-
+		
 		return list.stream().mapToInt(value -> value).toArray();
 	}
 
