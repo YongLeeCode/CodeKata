@@ -16,13 +16,13 @@ public class 자연수_뒤집어_배열로_만들기 {
 		String[] strNum = String.valueOf(n).split("");
 		int[] answer = new int[strNum.length];
 
-		for(int i = strNum.length - 1; i == 0; i--) {
+		for(int i = strNum.length - 1; i >= 0; i--) {
 			answer[index] = Integer.parseInt(strNum[i]);
 			index++;
 		}
 		return answer;
 	}
 	public static void main(String[] args) {
-		solution(12345);
+		System.out.println(Arrays.toString(solution(12345)));
 	}
 }
