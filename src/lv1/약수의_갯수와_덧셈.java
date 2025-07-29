@@ -8,6 +8,10 @@ package lv1;
  *
  * 제한사항
  *  - 1 ≤ left ≤ right ≤ 1,000
+ *
+ * 이번 코테 문제로 배운 것
+ *  - 자바 Math Method를 알아두면 좋을 것 같다.
+ *    그래서 블로그로 정리해봤다. https://velog.io/@yong-lee/Java-Math-Method
  */
 public class 약수의_갯수와_덧셈 {
 	private static int solution(int left, int right) {
