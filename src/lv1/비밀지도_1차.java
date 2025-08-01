@@ -21,42 +21,65 @@ import java.util.Set;
  *
  */
 public class 비밀지도_1차 {
-	public static String[] solution(int n, int[] arr1, int[] arr2) {
-		Set<String> set = new HashSet<>();
 
-		for (int j = 0; j < n; j++) {
-			int num = arr1[j];
-			for (int i = 0; i < n; i++) {
-				if ((num & (1 << (n - 1 - i))) != 0) {
-					set.add(j + "/" + i);
-				}
-			}
-		}
+	// 방법 1
+	// public static String[] solution(int n, int[] arr1, int[] arr2) {
+	// 	Set<String> set = new HashSet<>();
+	//
+	// 	for (int j = 0; j < n; j++) {
+	// 		int num = arr1[j];
+	// 		for (int i = 0; i < n; i++) {
+	// 			if ((num & (1 << (n - 1 - i))) != 0) {
+	// 				set.add(j + "/" + i);
+	// 			}
+	// 		}
+	// 	}
+	//
+	// 	for (int j = 0; j < n; j++) {
+	// 		int num = arr2[j];
+	// 		for (int i = 0; i < n; i++) {
+	// 			if ((num & (1 << (n - 1 - i))) != 0) {
+	// 				set.add(j + "/" + i);
+	// 			}
+	// 		}
+	// 	}
+	//
+	// 	String[] result = new String[n];
+	// 	Arrays.fill(result, "");
+	//
+	// 	for (int j = 0; j < n; j++) {
+	// 		for (int i = 0; i < n; i++) {
+	// 			if (set.contains(j + "/" + i)) {
+	// 				result[j] += "#";
+	// 			} else {
+	// 				result[j] += " ";
+	// 			}
+	// 		}
+	// 	}
+	//
+	// 	return result;
+	// }
 
-		for (int j = 0; j < n; j++) {
-			int num = arr2[j];
-			for (int i = 0; i < n; i++) {
-				if ((num & (1 << (n - 1 - i))) != 0) {
-					set.add(j + "/" + i);
-				}
-			}
-		}
-
+	// 방법 2
+	private static String[] solution(int n, int[] arr1, int[] arr2) {
 		String[] result = new String[n];
 		Arrays.fill(result, "");
 
-		for (int j = 0; j < n; j++) {
-			for (int i = 0; i < n; i++) {
-				if (set.contains(j + "/" + i)) {
-					result[j] += "#";
+		for(int i = 0; i < n; i++) {
+			int curr1 = arr1[i];
+			int curr2 = arr2[i];
+			for(int j = n - 1; j >= 0; j--) {
+				int mask = 1 << j; // 2^j
+				if ((curr1 & mask) != 0 || (curr2 & mask) != 0) {
+					result[i] += "#";
 				} else {
-					result[j] += " ";
+					result[i] += " ";
 				}
 			}
 		}
-
 		return result;
 	}
+
 	public static void main(String[] args) {
 		System.out.println(Arrays.toString(solution(5, new int[] {9, 20, 28, 18, 11}, new int[] {30, 1, 21, 17, 28})));
 	}
