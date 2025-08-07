@@ -28,7 +28,7 @@ public class 예상_대진표 {
 		return count;
 	}
 
-	private int ceilDiv(int num) {
+	private static int ceilDiv(int num) {
 		return (num + 1) / 2;
 	}
 }
